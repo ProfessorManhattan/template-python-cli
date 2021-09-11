@@ -1,0 +1,14 @@
+{
+    "Name": "python-cli-template",
+    "Description": "Python CLI Project",
+    "Version": "0.1.0",
+    "Author": "Renny Montero",
+    "Email": "rennym19@gmail.com",
+    "PrintHomeDir": true,
+    "License": [
+        "MIT", 
+        "GNU GPL v3.0", 
+        "Apache Software License 2.0"
+    ],
+    "Year": "2021"
+}
