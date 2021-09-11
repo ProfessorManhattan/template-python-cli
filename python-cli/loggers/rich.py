@@ -1,11 +1,5 @@
-from rich import console, padding
 from rich.console import Console
 from rich.table import Table
-
-
-def main():
-    """ Project's main entrypoint """
-    rich_print()
 
 
 def rich_print():
@@ -37,7 +31,3 @@ def rich_print():
     )
 
     console.print(table)
-
-
-if __name__ == "__main__":
-    main()
