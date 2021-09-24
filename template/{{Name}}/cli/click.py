@@ -16,3 +16,7 @@ def boilerplate(example: click.STRING) -> None:
         example (click.STRING): example function
     """
     click.echo(f"You're example function is {example}")
+
+
+if __name__ == "__main__":
+    boilerplate()

@@ -1,3 +1,6 @@
+import fire
+
+
 class Calculator(object):
     """A simple calculator class."""
 
@@ -13,3 +16,7 @@ class Calculator(object):
             int: results
         """
         return a + b
+
+
+if __name__ == "__main__":
+    fire.Fire(Calculator)

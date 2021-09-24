@@ -1,0 +1,70 @@
+---
+version: '3'
+
+tasks:
+  run:
+    deps:
+      - check:poetry
+    desc: Runs the {{Name}} project
+    cmds:
+      - poetry run python {{Name}}/main.py
+
+  install:
+    deps:
+      - check:poetry
+    desc: Install dependencies for the {{Name}} project
+    cmds:
+      - poetry install
+
+  test:
+    deps:
+      - check:poetry
+    desc: Run tests for the {{Name}} project
+    cmds:
+      - poetry run pytest
+
+  build:
+    deps:
+      - check:poetry
+    desc: Build the {{Name}} project
+    cmds:
+      - poetry build
+
+  clean:
+    deps:
+      - check:poetry
+    desc: Clean the {{Name}} project's dist folder
+    cmds:
+      - rm -rf dist
+
+  publish:
+    deps:
+      - check:poetry
+    desc: Publish the {{Name}} project to PyPI
+    cmds:
+      - poetry publish
+
+  format:
+    deps:
+      - check:poetry
+    desc: Style and format {{Name}} project's code
+    cmds:
+      - poetry run flake8 {{Name}}
+      - poetry run black {{Name}}
+
+  security:check:
+    deps:
+      - check:poetry
+    desc: Check {{Name}} project's code for security issues
+    cmds:
+      - poetry run bandit {{Name}}
+
+  check:poetry:
+    # desc: Check that poetry is in the system
+    preconditions:
+      - |
+        if ! command -v poetry &> /dev/null
+        then
+            echo "poetry could not be found"
+            exit 1
+        fi
