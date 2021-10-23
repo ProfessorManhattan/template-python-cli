@@ -10,7 +10,7 @@ import click
 )
 def boilerplate(example: click.STRING) -> None:
     """
-    Program that runs example functions.
+    This is a regular click command.
 
     Args:
         example (click.STRING): example function
@@ -18,5 +18,24 @@ def boilerplate(example: click.STRING) -> None:
     click.echo(f"You're example function is {example}")
 
 
-if __name__ == "__main__":
-    boilerplate()
+@click.group()
+def boilerplate_group():
+    """ This is a group of commands that allows for script nesting. """
+    pass
+
+
+@click.command()
+def start():
+    click.echo("Starting...")
+
+
+@click.command()
+def stop():
+    click.echo("Stopping...")
+
+
+boilerplate_group.add_command(start)
+boilerplate_group.add_command(stop)
+
+
+

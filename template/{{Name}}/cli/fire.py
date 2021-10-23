@@ -19,4 +19,5 @@ class Calculator(object):
 
 
 if __name__ == "__main__":
+    # Fire creates a CLI from the Calculator class
     fire.Fire(Calculator)
