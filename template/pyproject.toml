@@ -6,7 +6,7 @@ authors = ["{{Author}} <{{Email}}>"]
 license = "{{License}}"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = ">=3.6,<3.11"
 arrow = "^1.1.1"
 Sphinx = "^4.1.2"
 sphinx-press-theme = "^0.8.0"
@@ -30,6 +30,7 @@ PySnooper = "^1.0.0"
 pyinstrument = "^4.0.3"
 black = "^21.8b0"
 pytest = "^6.2.5"
+pyinstaller = "^4.6"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

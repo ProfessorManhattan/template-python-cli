@@ -7,7 +7,7 @@ tasks:
       - check:poetry
     desc: Runs the {{Name}} project
     cmds:
-      - poetry run python {{Name}}/main.py
+      - poetry run python run.py
 
   install:
     deps:
@@ -28,14 +28,22 @@ tasks:
       - check:poetry
     desc: Build the {{Name}} project
     cmds:
+      - rm -rf dist
       - poetry build
+
+  build:binary:
+    desc: Builds standalone binary for the {{Name}} project
+    cmds:
+      - poetry run python -OO -m PyInstaller -F run.py
+      - mv ./dist/run ./dist/{{Name}}
 
   clean:
     deps:
       - check:poetry
-    desc: Clean the {{Name}} project's dist folder
+    desc: Clean the {{Name}} project's dist and build folders
     cmds:
       - rm -rf dist
+      - rm -rf build
 
   publish:
     deps:
@@ -52,6 +60,16 @@ tasks:
       - poetry run flake8 {{Name}}
       - poetry run black {{Name}}
 
+  update:version:
+    deps:
+      - check:jq
+    desc: Updates the py package version so that it matches the one in package.json
+    cmds:
+      - cat package.json | jq .version
+      - sed -E '/^__version__/d' < ./{{Name}}/__init__.py > ./{{Name}}/__init2__.py
+      - echo "__version__ =" `cat package.json | jq .version` >> ./{{Name}}/__init2__.py
+      - mv ./{{Name}}/__init2__.py ./{{Name}}/__init__.py
+
   security:check:
     deps:
       - check:poetry
@@ -66,5 +84,15 @@ tasks:
         if ! command -v poetry &> /dev/null
         then
             echo "poetry could not be found"
+            exit 1
+        fi
+
+  check:jq:
+    # desc: Check that jq is in the system
+    preconditions:
+      - |
+        if ! command -v jq &> /dev/null
+        then
+            echo "jq could not be found"
             exit 1
         fi
