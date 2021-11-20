@@ -1,0 +1,142 @@
+{
+  "private": false,
+  "name": "@installdoc/ansible-androidstudio",
+  "version": "1.1.14",
+  "description": "Installs Android Studio and sets up Android SDKs on nearly any OS",
+  "license": "MIT",
+  "author": "Brian Zalewski <brian@megabyte.space> (https://megabyte.space)",
+  "homepage": "https://megabyte.space",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ProfessorManhattan/ansible-androidstudio.git"
+  },
+  "bugs": {
+    "email": "help@megabyte.space",
+    "url": "https://gitlab.com/megabyte-labs/ansible-roles/androidstudio/-/issues"
+  },
+  "type": "module",
+  "scripts": {
+    "help": "task --list",
+    "prepare": "task common:husky",
+    "start": "bash .config/start.sh"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "tslib": "^2.3.1"
+  },
+  "devDependencies": {
+    "@commitlint/config-conventional": "^13.1.0",
+    "@mblabs/eslint-config": "^1.0.97",
+    "@mblabs/prettier-config": "^14.14.14",
+    "@typescript-eslint/eslint-plugin": "^5.2.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "handlebars-helpers": "^0.10.0"
+  },
+  "keywords": [
+    "python",
+    "cli",
+    "boilerplate",
+    "template",
+    "pytest",
+    "sphinx",
+    "better-exceptions",
+    "aiohttp",
+    "click",
+    "python-fire",
+    "celery",
+    "arrow",
+    "rich",
+    "pyinstaller"
+  ],
+  "engines": {
+    "node": ">=14.18.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "blueprint": {
+    "boilerplate": true,
+    "description": "Boilerplate/Template for Python CLI projects",
+    "group": "python",
+    "name": "Python CLI Boilerplate",
+    "overview": "This repository is home to a Python CLI boilerplate. It is functional and feature-rich for advanced users. It is also simple, intuitive, and informative for Python beginners. It includes a lot of developer tools (powered by Task), useful CI configurations, and an awesome initial boilerplate codebase (special thanks to [Renny Montero](mailto:rennym19@gmail.com). This repository is kept up-to-date with the latest dependency updates and tools via GitLab CI (feel free to roam through `.config/`).",
+    "repository": {
+      "github": "https://github.com/ProfessorManhattan/template-python-cli",
+      "gitlab": "https://gitlab.com/megabyte-labs/templates/python-cli",
+      "prefix": {
+        "github": "template-"
+      }
+    },
+    "slug": "python-cli",
+    "subgroup": "cli",
+    "title": "The Easy, Feature-Packed, Python CLI Starter Template"
+  },
+  "eslintConfig": {
+    "extends": "@mblabs/eslint-config"
+  },
+  "funding": [
+    {
+      "type": "opencollective",
+      "url": "https://opencollective.com/megabytelabs"
+    },
+    {
+      "type": "patreon",
+      "url": "https://www.patreon.com/ProfessorManhattan"
+    }
+  ],
+  "lint-staged": {
+    "**/*": [
+      "blocklint --wordlist blacklist,slave,whitelist",
+      "check-merge-conflict",
+      "check-added-large-files",
+      "check-symlinks",
+      "destroyed-symlinks"
+    ],
+    "**/*.(css|html|less|md|mjml|php|scss|sh|xml)": [
+      "task fix:prettier --"
+    ],
+    "**/*.(jpg|png)": [
+      "task image:compress --"
+    ],
+    "**/*.(js|jsx|ts|tsx)": [
+      "task fix:js --",
+      "task lint:js --"
+    ],
+    "**/*.json": [
+      "task fix:json --"
+    ],
+    "**/*.py": [
+      "task fix:python --",
+      "task lint:python --"
+    ],
+    "**/*.sh": [
+      "task fix:shell --",
+      "task lint:shell --"
+    ],
+    "**/*.toml": [
+      "task lint:toml --"
+    ],
+    "**/*.xml": [
+      "task fix:xml --",
+      "task lint:xml --"
+    ],
+    "**/*.yml": [
+      "task fix:yaml --",
+      "task lint:yaml --"
+    ],
+    "logo.png": [
+      "task image:resize -- 200 200",
+      "task image:compress --"
+    ]
+  },
+  "prettier": "@mblabs/prettier-config",
+  "standard-version": {
+    "scripts": {
+      "prerelease": "git add --all"
+    }
+  }
+}
