@@ -1,0 +1,25 @@
+---
+stages:
+  - update
+  - lint
+  - lsif
+  - test
+  - publish
+
+include:
+  - local: .gitlab/ci/lint/eslint.gitlab-ci.yml
+  - local: .gitlab/ci/lint/prettier.gitlab-ci.yml
+  - local: .gitlab/ci/lint/python/bandit.gitlab-ci.yml
+  - local: .gitlab/ci/lint/python/black.gitlab-ci.yml
+  - local: .gitlab/ci/lint/python/flake8.gitlab-ci.yml
+  - local: .gitlab/ci/lint/python/mypy.gitlab-ci.yml
+  - local: .gitlab/ci/lint/python/pydocstyle.gitlab-ci.yml
+  - local: .gitlab/ci/lint/python/pylint.gitlab-ci.yml
+  - local: .gitlab/ci/lint/shellcheck.gitlab-ci.yml
+  - local: .gitlab/ci/lint/yamllint.gitlab-ci.yml
+  - local: .gitlab/ci/lsif/python.gitlab-ci.yml
+  - local: .gitlab/ci/publish/docs/sphinx.gitlab-ci.yml
+  - local: .gitlab/ci/publish/python/dockerize.gitlab-ci.yml
+  - local: .gitlab/ci/publish/python/pypi.gitlab-ci.yml
+  - local: .gitlab/ci/test/python.gitlab-ci.yml
+  - local: .gitlab/ci/update/project.gitlab-ci.yml

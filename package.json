@@ -1,18 +1,18 @@
 {
   "private": false,
-  "name": "@installdoc/ansible-androidstudio",
+  "name": "@mblabs/template-python-cli",
   "version": "1.1.14",
-  "description": "Installs Android Studio and sets up Android SDKs on nearly any OS",
+  "description": "Boilerplate/Template for Python CLI projects",
   "license": "MIT",
   "author": "Brian Zalewski <brian@megabyte.space> (https://megabyte.space)",
   "homepage": "https://megabyte.space",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ProfessorManhattan/ansible-androidstudio.git"
+    "url": "git+https://github.com/ProfessorManhattan/template-python-cli.git"
   },
   "bugs": {
     "email": "help@megabyte.space",
-    "url": "https://gitlab.com/megabyte-labs/ansible-roles/androidstudio/-/issues"
+    "url": "https://gitlab.com/megabyte-labs/templates/python-cli/-/issues"
   },
   "type": "module",
   "scripts": {
@@ -28,29 +28,46 @@
   "dependencies": {
     "tslib": "^2.3.1"
   },
+  "optionalDependencies": {
+    "chalk": "^4.1.2",
+    "inquirer": "^8.2.0",
+    "signale": "^1.4.0",
+    "string-break": "^1.2.0"
+  },
   "devDependencies": {
     "@commitlint/config-conventional": "^13.1.0",
-    "@mblabs/eslint-config": "^1.0.97",
+    "@mblabs/eslint-config": "^1.0.102",
     "@mblabs/prettier-config": "^14.14.14",
+    "@mblabs/release-config": "^1.0.0",
     "@typescript-eslint/eslint-plugin": "^5.2.0",
     "cz-conventional-changelog": "^3.3.0",
-    "handlebars-helpers": "^0.10.0"
+    "handlebars-helpers": "^0.10.0",
+    "semantic-release": "^18.0.0"
   },
   "keywords": [
-    "python",
-    "cli",
-    "boilerplate",
-    "template",
-    "pytest",
-    "sphinx",
-    "better-exceptions",
+    "advanced",
     "aiohttp",
-    "click",
-    "python-fire",
-    "celery",
     "arrow",
+    "bandit",
+    "beginner",
+    "better-exceptions",
+    "boilerplate",
+    "celery",
+    "cli",
+    "click",
+    "easy",
+    "gitlab-ci",
+    "mblabs",
+    "megabytelabs",
+    "poetry",
+    "professormanhattan",
+    "pyinstaller",
+    "pytest",
+    "python",
+    "python-fire",
     "rich",
-    "pyinstaller"
+    "sphinx",
+    "template"
   ],
   "engines": {
     "node": ">=14.18.0"
@@ -109,10 +126,6 @@
     "**/*.json": [
       "task fix:json --"
     ],
-    "**/*.py": [
-      "task fix:python --",
-      "task lint:python --"
-    ],
     "**/*.sh": [
       "task fix:shell --",
       "task lint:shell --"
@@ -134,9 +147,11 @@
     ]
   },
   "prettier": "@mblabs/prettier-config",
-  "standard-version": {
-    "scripts": {
-      "prerelease": "git add --all"
-    }
+  "release": {
+    "branches": [
+      "master",
+      "next"
+    ],
+    "extends": "@mblabs/release-config"
   }
 }
