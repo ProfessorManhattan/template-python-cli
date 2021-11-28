@@ -23,6 +23,13 @@ tasks:
     cmds:
       - poetry run pytest
 
+  test:tox:
+    deps:
+      - check:poetry
+    desc: Run {{Name}} tests for multiple Python versions (defined in tox.ini).
+    cmds:
+      - poetry run tox
+
   build:
     deps:
       - check:poetry
@@ -56,9 +63,27 @@ tasks:
     deps:
       - check:poetry
     desc: Style and format {{Name}} project's code
+    cmds: |
+      poetry run flake8 {{Name}}
+      poetry run autoflake \
+        --imports=arrow,sphinx,rich,fire,requests,aiohttp,schema,click,celery,better-exceptions,sh,schedule,furl \
+        --in-place -r {{Name}}
+      potry run autopep8 --in-place --aggressive --aggressive -r {{Name}}
+      poetry run black {{Name}}
+
+  format:docs:
+    deps:
+      - check:poetry
+    desc: Check compliance with Python docstring conventions.
     cmds:
-      - poetry run flake8 {{Name}}
-      - poetry run black {{Name}}
+      - poetry run pydocstyle {{.CLI_ARGS}}
+
+  check:typing:
+    deps:
+      - check:poetry
+    desc: Check static typing
+    cmds:
+      - poetry run mypy {{.CLI_ARGS}}
 
   update:version:
     deps:
@@ -77,14 +102,41 @@ tasks:
     cmds:
       - poetry run bandit {{Name}}
 
+  docker:build:
+    deps:
+      - check:docker
+      - check:jq
+    desc: Builds docker image
+    cmds: |
+      version=$(package.json | jq .version)
+      docker build -t {{Name}}:$version .
+
+  docker:publish:
+    deps:
+      - check:docker
+      - check:jq
+    desc: Publishes docker image
+    cmds: |
+      version=$(package.json | jq .version)
+      docker push {{Name}}:$version
+
+  docker:test:
+    deps:
+      - check:docker
+      - check:jq
+    desc: Sets up the project and runs unit tests in a Docker container
+    cmds: |
+      version=$(package.json | jq .version)
+      docker run --name {{Name}}-tests --entrypoint "/venv/bin/python -m unittest discover" --rm {{Name}}:$version
+
   check:poetry:
     # desc: Check that poetry is in the system
     preconditions:
       - |
         if ! command -v poetry &> /dev/null
         then
-            echo "poetry could not be found"
-            exit 1
+          echo "poetry could not be found"
+          exit 1
         fi
 
   check:jq:
@@ -93,6 +145,16 @@ tasks:
       - |
         if ! command -v jq &> /dev/null
         then
-            echo "jq could not be found"
-            exit 1
+          echo "jq could not be found"
+          exit 1
+        fi
+
+  check:docker:
+    # desc: Check that docker is in the system
+    preconditions:
+      - |
+        if ! command -v docker &> /dev/null
+        then
+          echo "docker could not be found"
+          exit 1
         fi

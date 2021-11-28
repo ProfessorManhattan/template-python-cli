@@ -23,7 +23,7 @@ schedule = "^1.1.0"
 furl = "^2.1.2"
 
 [tool.poetry.dev-dependencies]
-flake8 = "^3.9.2"
+flake8 = "^4.0.1"
 pylint = "^2.10.2"
 bandit = "^1.7.0"
 PySnooper = "^1.0.0"
@@ -31,6 +31,12 @@ pyinstrument = "^4.0.3"
 black = "^21.8b0"
 pytest = "^6.2.5"
 pyinstaller = "^4.6"
+debugpy = "^1.5.1"
+autoflake = "^1.4"
+autopep8 = "^1.6.0"
+pydocstyle = "^6.1.1"
+mypy = "^0.910"
+tox = "^3.24.4"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

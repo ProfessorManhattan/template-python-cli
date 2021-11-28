@@ -1,0 +1,18 @@
+{
+  "version": "{{Name}}",
+  "configurations": [{
+      "name": "Python: Run {{Name}}",
+      "type": "python",
+      "request": "launch",
+      "program": "{{Name}}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Python: Attach",
+      "type": "python",
+      "request": "attach",
+      "port": 5678,
+      "host": "localhost"
+    }
+  ]
+}
