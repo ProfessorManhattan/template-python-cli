@@ -42,10 +42,10 @@
     <img alt="Version: 1.1.14" src="https://img.shields.io/badge/version-1.1.14-blue.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgAQMAAABJtOi3AAAABlBMVEUAAAD///+l2Z/dAAAAAXRSTlMAQObYZgAAACNJREFUCNdjIACY//+BEp9hhM3hAzYQwoBIAqEDYQrCZLwAAGlFKxU1nF9cAAAAAElFTkSuQmCC&cacheSeconds=2592000&style=flat-square" />
   </a>
   <a title="Build status on GitLab" href="https://gitlab.com/megabyte-labs/templates/python-cli/-/commits/master" target="_blank">
-    <img alt="GitLab build status" src="https://img.shields.io/gitlab/pipeline-status/repository.group.python_cli_path/python-cli?branch=master&label=Build&logo=gitlab&style=flat-square">
+    <img alt="GitLab build status" src="https://img.shields.io/gitlab/pipeline-status/megabyte-labs/python/cli/python-cli?branch=master&label=Build&logo=gitlab&style=flat-square">
   </a>
   <a title="Test coverage report" href="https://gitlab.com/megabyte-labs/templates/python-cli/-/commits/master" target="_blank">
-    <img alt="Coverage status" src="https://img.shields.io/gitlab/coverage/repository.group.python_cli_path/python-cli/master/?label=Coverage&logo=pytest&style=flat-square">
+    <img alt="Coverage status" src="https://img.shields.io/gitlab/coverage/megabyte-labs/python/cli/python-cli/master/?label=Coverage&logo=pytest&style=flat-square">
   </a>
   <a title="Documentation" href="https://megabyte.space/docs/python" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg?logo=readthedocs&style=flat-square" />
