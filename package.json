@@ -23,29 +23,17 @@
   },
   "config": {
     "commitizen": {
-      "path": "cz-emoji"
+      "path": "node_modules/cz-emoji-conventional"
     }
   },
-  "dependencies": {
-    "tslib": "^2.3.1"
-  },
-  "optionalDependencies": {
-    "chalk": "^4.1.2",
-    "inquirer": "^8.2.0",
-    "signale": "^1.4.0",
-    "string-break": "^1.2.0"
-  },
+  "dependencies": {},
+  "optionalDependencies": {},
   "devDependencies": {
-    "@commitlint/config-conventional": "^13.2.0",
-    "@mblabs/eslint-config": "^1.0.115",
-    "@mblabs/prettier-config": "^14.14.30",
-    "@mblabs/release-config": "^1.0.0",
-    "@typescript-eslint/eslint-plugin": "^5.2.0",
-    "commitlint-config-gitmoji": "^2.2.5",
-    "cz-conventional-changelog": "^3.3.0",
-    "glob": "^7.2.0",
-    "handlebars-helpers": "^0.10.0",
-    "semantic-release": "^18.0.0"
+    "@washingtondc/development": "^1.0.2",
+    "@washingtondc/prettier": "^1.0.0",
+    "@washingtondc/release": "^0.0.2",
+    "eslint-config-strict-mode": "^1.0.0",
+    "sleekfast": "^0.0.1"
   },
   "keywords": [
     "advanced",
@@ -70,7 +58,8 @@
     "python-fire",
     "rich",
     "sphinx",
-    "template"
+    "template",
+    "washingtondc"
   ],
   "engines": {
     "node": ">=14.18.0"
@@ -93,10 +82,19 @@
     },
     "slug": "python-cli",
     "subgroup": "cli",
-    "title": "The Easy, Feature-Packed, Python CLI Starter Template"
+    "title": "The Easy, Feature-Packed, Python CLI Starter Template",
+    "github_id": "R_kgDOGcyWLg",
+    "gitlab_project_id": "28640920",
+    "gitlab_group_id": "11579735"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "helpUrl": "https://megabyte.space/docs/contributing/commits"
   },
   "eslintConfig": {
-    "extends": "@mblabs/eslint-config"
+    "extends": "eslint-config-strict-mode"
   },
   "funding": [
     {
@@ -109,18 +107,14 @@
     }
   ],
   "lint-staged": {
+    "**/!(logo).(jpg|png)": [
+      "task image:compress --"
+    ],
     "**/*": [
-      "blocklint --wordlist blacklist,slave,whitelist",
-      "check-merge-conflict",
-      "check-added-large-files",
-      "check-symlinks",
-      "destroyed-symlinks"
+      "task lint:any --"
     ],
     "**/*.(css|html|less|md|mjml|php|scss|sh|xml)": [
       "task fix:prettier --"
-    ],
-    "**/*.(jpg|png)": [
-      "task image:compress --"
     ],
     "**/*.(js|jsx|ts|tsx)": [
       "task fix:js --",
@@ -130,7 +124,6 @@
       "task fix:json --"
     ],
     "**/*.sh": [
-      "task fix:shell --",
       "task lint:shell --"
     ],
     "**/*.toml": [
@@ -149,12 +142,20 @@
       "task image:compress --"
     ]
   },
-  "prettier": "@mblabs/prettier-config",
+  "ntl": {
+    "descriptions": {
+      "help": "Display a list of tasks that can be run via the Taskfile.yml",
+      "prepare": "Hook, triggered by running npm install, that runs logic such as installing pre-commit hooks",
+      "repair": "Fixes basic issues in projects that are having trouble running basic commands like 'task start'",
+      "start": "Entrypoint for new developers that installs requirements and then runs 'task start'"
+    }
+  },
+  "prettier": "@washingtondc/prettier",
   "release": {
     "branches": [
       "master",
       "next"
     ],
-    "extends": "@mblabs/release-config"
+    "extends": "@washingtondc/release"
   }
 }

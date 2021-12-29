@@ -7,7 +7,7 @@ license = "MIT"
 readme = "README.md"
 homepage = "https://megabyte.space"
 documentation = "https://megabyte.space/docs/python/library"
-keywords = ["advanced", "aiohttp", "arrow", "bandit", "beginner", "better-exceptions", "boilerplate", "celery", "cli", "click", "easy", "gitlab-ci", "mblabs", "megabytelabs", "poetry", "professormanhattan", "pyinstaller", "pytest", "python", "python-fire", "rich", "sphinx", "template"]
+keywords = ["advanced", "aiohttp", "arrow", "bandit", "beginner", "better-exceptions", "boilerplate", "celery", "cli", "click", "easy", "gitlab-ci", "mblabs", "megabytelabs", "poetry", "professormanhattan", "pyinstaller", "pytest", "python", "python-fire", "rich", "sphinx", "template", "washingtondc"]
 include = ["CHANGELOG.md", "LICENSE"]
 classifiers = [
   "Development Status :: 4 - Beta",

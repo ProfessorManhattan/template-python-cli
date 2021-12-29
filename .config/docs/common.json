@@ -1,7 +1,0 @@
-{
-  "build_coverage_regex": "^TOTAL.+?(\\d+.\\d+\\%)$",
-  "docs": {
-    "link": "https://megabyte.space/docs/common/python"
-  },
-  "github_prefix": "python-"
-}
