@@ -70,6 +70,9 @@
   "blueprint": {
     "boilerplate": true,
     "description": "Boilerplate/Template for Python CLI projects",
+    "github_id": "R_kgDOGcyWLg",
+    "gitlab_group_id": "11579735",
+    "gitlab_project_id": "28640920",
     "group": "python",
     "name": "Python CLI Boilerplate",
     "overview": "This repository is home to a Python CLI boilerplate. It is functional and feature-rich for advanced users. It is also simple, intuitive, and informative for Python beginners. It includes a lot of developer tools (powered by Task), useful CI configurations, and an awesome initial boilerplate codebase (special thanks to [Renny Montero](mailto:rennym19@gmail.com). This repository is kept up-to-date with the latest dependency updates and tools via GitLab CI (feel free to roam through `.config/`).",
@@ -82,10 +85,7 @@
     },
     "slug": "python-cli",
     "subgroup": "cli",
-    "title": "The Easy, Feature-Packed, Python CLI Starter Template",
-    "github_id": "R_kgDOGcyWLg",
-    "gitlab_project_id": "28640920",
-    "gitlab_group_id": "11579735"
+    "title": "The Easy, Feature-Packed, Python CLI Starter Template"
   },
   "commitlint": {
     "extends": [
