@@ -7,19 +7,19 @@ stages:
   - publish
 
 include:
-  - local: .gitlab/ci/lint/eslint.gitlab-ci.yml
-  - local: .gitlab/ci/lint/prettier.gitlab-ci.yml
-  - local: .gitlab/ci/lint/python/bandit.gitlab-ci.yml
-  - local: .gitlab/ci/lint/python/black.gitlab-ci.yml
-  - local: .gitlab/ci/lint/python/flake8.gitlab-ci.yml
-  - local: .gitlab/ci/lint/python/mypy.gitlab-ci.yml
-  - local: .gitlab/ci/lint/python/pydocstyle.gitlab-ci.yml
-  - local: .gitlab/ci/lint/python/pylint.gitlab-ci.yml
-  - local: .gitlab/ci/lint/shellcheck.gitlab-ci.yml
-  - local: .gitlab/ci/lint/yamllint.gitlab-ci.yml
-  - local: .gitlab/ci/lsif/python.gitlab-ci.yml
-  - local: .gitlab/ci/publish/docs/sphinx.gitlab-ci.yml
-  - local: .gitlab/ci/publish/python/dockerize.gitlab-ci.yml
-  - local: .gitlab/ci/publish/python/pypi.gitlab-ci.yml
-  - local: .gitlab/ci/test/python.gitlab-ci.yml
-  - local: .gitlab/ci/update/project.gitlab-ci.yml
+  - remote: https://gitlab.com/megabyte-labs/gitlab-ci/-/raw/master/lint/eslint.gitlab-ci.yml
+  - remote: https://gitlab.com/megabyte-labs/gitlab-ci/-/raw/master/lint/prettier.gitlab-ci.yml
+  - remote: https://gitlab.com/megabyte-labs/gitlab-ci/-/raw/master/lint/python/bandit.gitlab-ci.yml
+  - remote: https://gitlab.com/megabyte-labs/gitlab-ci/-/raw/master/lint/python/black.gitlab-ci.yml
+  - remote: https://gitlab.com/megabyte-labs/gitlab-ci/-/raw/master/lint/python/flake8.gitlab-ci.yml
+  - remote: https://gitlab.com/megabyte-labs/gitlab-ci/-/raw/master/lint/python/mypy.gitlab-ci.yml
+  - remote: https://gitlab.com/megabyte-labs/gitlab-ci/-/raw/master/lint/python/pydocstyle.gitlab-ci.yml
+  - remote: https://gitlab.com/megabyte-labs/gitlab-ci/-/raw/master/lint/python/pylint.gitlab-ci.yml
+  - remote: https://gitlab.com/megabyte-labs/gitlab-ci/-/raw/master/lint/shellcheck.gitlab-ci.yml
+  - remote: https://gitlab.com/megabyte-labs/gitlab-ci/-/raw/master/lint/yamllint.gitlab-ci.yml
+  - remote: https://gitlab.com/megabyte-labs/gitlab-ci/-/raw/master/lsif/python.gitlab-ci.yml
+  - remote: https://gitlab.com/megabyte-labs/gitlab-ci/-/raw/master/publish/docs/sphinx.gitlab-ci.yml
+  - remote: https://gitlab.com/megabyte-labs/gitlab-ci/-/raw/master/publish/python/dockerize.gitlab-ci.yml
+  - remote: https://gitlab.com/megabyte-labs/gitlab-ci/-/raw/master/publish/python/pypi.gitlab-ci.yml
+  - remote: https://gitlab.com/megabyte-labs/gitlab-ci/-/raw/master/test/python.gitlab-ci.yml
+  - remote: https://gitlab.com/megabyte-labs/gitlab-ci/-/raw/master/update/project.gitlab-ci.yml
