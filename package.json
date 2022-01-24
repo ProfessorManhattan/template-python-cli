@@ -33,6 +33,7 @@
     "@washingtondc/prettier": "^1.0.0",
     "@washingtondc/release": "^0.0.2",
     "eslint-config-strict-mode": "^1.0.0",
+    "semantic-release-config": "^0.0.2",
     "sleekfast": "^0.0.1"
   },
   "keywords": [
@@ -94,7 +95,11 @@
     "helpUrl": "https://megabyte.space/docs/contributing/commits"
   },
   "eslintConfig": {
-    "extends": "eslint-config-strict-mode"
+    "extends": "eslint-config-strict-mode",
+    "rules": {
+      "max-len": "warn",
+      "max-lines": "warn"
+    }
   },
   "funding": [
     {
@@ -164,6 +169,6 @@
         "prerelease": true
       }
     ],
-    "extends": "@washingtondc/release"
+    "extends": "semantic-release-config"
   }
 }
