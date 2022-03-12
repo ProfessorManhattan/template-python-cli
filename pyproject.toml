@@ -53,35 +53,12 @@ description = "Boilerplate/Template for Python CLI projects"
 documentation = "https://megabyte.space/docs/python/library"
 homepage = "https://megabyte.space"
 include = ["CHANGELOG.md", "LICENSE"]
-keywords = [
-  "advanced",
-  "aiohttp",
-  "arrow",
-  "bandit",
-  "beginner",
-  "better-exceptions",
-  "boilerplate",
-  "celery",
-  "cli",
-  "click",
-  "easy",
-  "gitlab-ci",
-  "mblabs",
-  "megabytelabs",
-  "poetry",
-  "professormanhattan",
-  "pyinstaller",
-  "pytest",
-  "python",
-  "python-fire",
-  "rich",
-  "sphinx",
-  "template",
-  "washingtondc"
-]
+keywords = ["advanced", "aiohttp", "arrow", "bandit", "beginner", "better-exceptions", "boilerplate", "celery", "cli", "click", "easy", "gitlab-ci", "mblabs", "megabytelabs", "poetry", "professormanhattan", "pyinstaller", "pytest", "python", "python-fire", "rich", "sphinx", "template", "washingtondc"]
 license = "MIT"
 name = "template-python-cli"
-packages = [{ include = "template-python-cli" }]
+packages = [
+    { include = "template-python-cli" }
+]
 readme = "README.md"
 version = "1.1.14"
 
@@ -139,7 +116,12 @@ recommended = [
   "sphinx",
   "sphinx-press-theme"
 ]
-semantic = ["pip", "setuptools", "twine", "wheel"]
+semantic = [
+  "pip",
+  "setuptools",
+  "twine",
+  "wheel"
+]
 
 [tool.poetry.urls]
 "Bug Tracker" = "https://gitlab.com/megabyte-labs/templates/python-cli/-/issues"
