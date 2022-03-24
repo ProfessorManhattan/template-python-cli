@@ -1,7 +1,7 @@
 class PythonCli < Formula
   desc "Boilerplate/Template for Python CLI projects"
   homepage "https://megabyte.space"
-  url "https://github.com/ProfessorManhattan/template-python-cli/releases/download/v1.1.14/python-cli.tar.gz"
+  url "https://github.com/megabyte-labs/template-python-cli/releases/download/v1.1.14/python-cli.tar.gz"
   version "1.1.14"
   license "MIT"
 
