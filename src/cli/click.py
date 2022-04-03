@@ -36,6 +36,3 @@ def stop():
 
 boilerplate_group.add_command(start)
 boilerplate_group.add_command(stop)
-
-
-

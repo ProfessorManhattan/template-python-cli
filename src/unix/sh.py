@@ -14,3 +14,4 @@ def examples():
 
     # rm foo.bar
     print(rm("./foo.bar"))
+
