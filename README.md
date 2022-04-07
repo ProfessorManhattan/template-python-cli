@@ -62,6 +62,7 @@
 ## Table of Contents
 
 - [Overview](#overview)
+- [This Repository (Shared Common)](#this-repository-shared-common)
 - [Installation](#installation)
   - [PyPi](#pypi)
   - [Install Doctor](#install-doctor)
@@ -78,7 +79,11 @@
 
 This repository is home to a Python CLI boilerplate. It is functional and feature-rich for advanced users. It is also simple, intuitive, and informative for Python beginners. It includes a lot of developer tools (powered by Task), useful CI configurations, and an awesome initial boilerplate codebase (special thanks to [Renny Montero](mailto:rennym19@gmail.com). This repository is kept up-to-date with the latest dependency updates and tools via GitLab CI (feel free to roam through `.config/`).
 
-{{ load:docs/partials/guide.md }}
+<a href="#this-repository-shared-common" style="width:100%"><img style="width:100%" src="https://gitlab.com/megabyte-labs/assets/-/raw/master/png/aqua-divider.png" /></a>
+
+## This Repository (Shared Common)
+
+This repository houses files that propagate downstream to project-specific repositories.
 
 <a href="#installation" style="width:100%"><img style="width:100%" src="https://gitlab.com/megabyte-labs/assets/-/raw/master/png/aqua-divider.png" /></a>
 
