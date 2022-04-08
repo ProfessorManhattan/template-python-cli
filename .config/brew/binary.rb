@@ -10,7 +10,7 @@ class PythonCli < Formula
   def install
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "amd64" : Hardware::CPU.arch.to_s
-    bin.install "build/bin/python-cli-#{os}_#{arch}" => "python-cli"
+    bin.install "build/python-cli-#{os}_#{arch}" => "python-cli"
   done
 
   test do
