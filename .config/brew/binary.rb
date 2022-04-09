@@ -1,3 +1,4 @@
+# @binaryBrew [PythonCli](https://github.com/megabyte-labs/template-python-cli) - Boilerplate/Template for Python CLI projects
 class PythonCli < Formula
   desc "Boilerplate/Template for Python CLI projects"
   homepage "https://megabyte.space"
