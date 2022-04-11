@@ -2,7 +2,9 @@
 
 from sh import ls, ifconfig, touch, rm
 
+
 def examples():
+
     # ls -la
     print(ls("-la"))
 
@@ -14,4 +16,3 @@ def examples():
 
     # rm foo.bar
     print(rm("./foo.bar"))
-
