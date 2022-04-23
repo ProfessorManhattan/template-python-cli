@@ -17,7 +17,6 @@
   "type": "module",
   "scripts": {
     "build": "bash start.sh && task python:build",
-    "bump": "npm run build && npm version patch --no-commit-hooks --no-git-tag-version --force && npm publish",
     "commit": "bash start.sh && task commit",
     "fix": "bash start.sh && task fix",
     "help": "bash start.sh && task --menu",
