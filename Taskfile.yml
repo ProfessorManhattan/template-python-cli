@@ -262,6 +262,39 @@ includes:
   web:profile:
     taskfile: ./.config/taskfiles/web/Taskfile-profile.yml
     optional: true
+  cloud:
+    taskfile: ./.config/taskfiles/cloud/Taskfile.yml
+    optional: true
+  cloud:s3:
+    taskfile: ./.config/taskfiles/cloud/Taskfile-s3.yml
+    optional: true
+  install:qubes:
+    taskfile: ./.config/taskfiles/install/Taskfile-qubes.yml
+    optional: true
+  install:requirements:
+    taskfile: ./.config/taskfiles/install/Taskfile-requirements.yml
+    optional: true
+  install:service:
+    taskfile: ./.config/taskfiles/install/Taskfile-service.yml
+    optional: true
+  install:ventoy:
+    taskfile: ./.config/taskfiles/install/Taskfile-ventoy.yml
+    optional: true
+  security:disk:
+    taskfile: ./.config/taskfiles/security/Taskfile-disk.yml
+    optional: true
+  security:gpg:
+    taskfile: ./.config/taskfiles/security/Taskfile-gpg.yml
+    optional: true
+  security:ssh:
+    taskfile: ./.config/taskfiles/security/Taskfile-ssh.yml
+    optional: true
+  security:yubikey:
+    taskfile: ./.config/taskfiles/security/Taskfile-yubikey.yml
+    optional: true
+  vagrant:qubes:
+    taskfile: ./.config/taskfiles/vagrant/Taskfile-qubes.yml
+    optional: true
 output: interleaved
 vars:
   DOCKERHUB_PROFILE:
@@ -363,12 +396,26 @@ vars:
   includes:
     common:start: ./.config/taskfiles/common/Taskfile-start.yml
 env:
+  GOPATH:
+    sh: |
+      if [ -z "$GOPATH" ]; then
+        echo "$HOME/.local/go"
+      else
+        echo "$GOPATH"
+      fi
   OSTYPE:
     sh: |
       {{if (eq OS "linux")}}LINUX_FLAVOR='linux-gnu'
       LIBC=$(ldd /bin/ls | grep 'musl' | head -1 | cut -d ' ' -f1)
       if [ -n "$LIBC" ]; then LINUX_FLAVOR='linux-musl'; fi{{end}}
       echo "{{if (eq OS "linux")}}$LINUX_FLAVOR{{else}}darwin{{end}}"
+  PATH:
+    sh: |
+      PATH="$PATH:$HOME/.local/bin:$HOME/.poetry/bin:$HOME/.gem/bin:$HOME/.asdf/bin"
+      PATH="$PATH:$HOME/.local/go/bin:$HOME/go/bin"
+      PATH="$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin"
+      PATH="$PATH:$PWD/bin"
+      echo "$PATH"
   RECORD_INSTALL:
     sh: if [ -n "$CI" ]; then echo 'true'; fi
   SENTRY_DSN:
