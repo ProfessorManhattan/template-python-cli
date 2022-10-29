@@ -293,7 +293,7 @@ python-versions = "*"
 click = ">=4.0"
 
 [package.extras]
-dev = ["coveralls", "wheel", "pytest-cov", "pytest (>=3.6)"]
+dev = ["pytest (>=3.6)", "pytest-cov", "wheel", "coveralls"]
 
 [[package]]
 name = "click-repl"
